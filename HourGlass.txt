@@ -1,0 +1,14 @@
+def findMax(inputArray):
+    
+    sum=0
+    listt=[]
+    for row in range(0,len(inputArray)-2):
+        for col in range(0,len(inputArray)-2):
+            sum=0
+            for count in range(col,col+3):
+                sum+=inputArray[row][count]
+                sum+=inputArray[row+2][count]
+                
+            sum+=inputArray[row+1][col+1]
+            listt.append(sum)
+    return max(listt)
