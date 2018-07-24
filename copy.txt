@@ -1,0 +1,60 @@
+def commonChild(s1, s2):
+    count =0
+    count1=0
+    index=0
+    index1=0
+    index2=0
+    index3=0
+    ref_list=[]
+    '''for first in range(len(s1)):
+        for second in range(index1,len(s2)):
+            if s1[first]==s2[second]:
+                count+=1
+                index1=second+1
+                #index=first+1
+                break
+                
+               
+    ref_list.append(count) 
+    #return count
+          
+    temp=s1
+    s1=s2
+    s2=temp
+    
+    for first in range(len(s1)):
+        for second in range(index2,len(s2)):
+            if s1[first]==s2[second]:
+                count1+=1
+                index2=second+1
+                #index=first+1
+                break
+                
+    
+                
+               
+                
+            
+    ref_list.append(count1)
+    
+    
+    
+    return max(ref_list)'''
+    
+    for first in range(len(s1)):
+        for second in range(index,len(s2)):
+            if s1[first]==s2[second]:
+                count+=1
+                index=second+1
+            if index!=0:
+                #first+=1
+                for ref in range(index):
+                    #first+=1
+                    if s1[first]==s2[ref]:
+                        count=0
+                        index=ref
+                        count+=1
+            
+   
+    #return count
+            
