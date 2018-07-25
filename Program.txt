@@ -1,0 +1,110 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bank
+{
+    class Program
+
+    {
+        
+        //static Dictionary<int, string> deposit_dict = new Dictionary<int, string>();
+
+        static void Main(string[] args)
+        {
+
+            int option = 0;
+            int decide = 1;
+
+            Details.name.Add("User1");
+            Details.acc_no.Add(1);
+            Details.balance.Add(1000);
+            Details.acc_type.Add("saving");
+            Details.acc_id.Add(1);
+
+
+            Details.name.Add("User2");
+            Details.acc_no.Add(2);
+            Details.balance.Add(5000);
+            Details.acc_type.Add("current");
+            Details.acc_id.Add(2);
+
+            Details.name.Add("User3");
+            Details.acc_no.Add(3);
+            Details.balance.Add(6000);
+            Details.acc_type.Add("saving");
+            Details.acc_id.Add(3);
+
+            Details.name.Add("User4");
+            Details.acc_no.Add(4);
+            Details.balance.Add(0);
+            Details.acc_type.Add("DMAT");
+            Details.acc_id.Add(4);
+
+
+
+            while (decide == 1)
+            {
+                Console.WriteLine("Enter which operation You want to perform: 1: Search 2: Deposit 3.Withdrawal 4. Calculate interest remaining: ");
+                option = int.Parse(Console.ReadLine());
+
+                switch (option)
+                {
+                    case 1:
+                        Console.WriteLine("Enter which account id you want to search:");
+                        int id = int.Parse(Console.ReadLine());
+                        Details.search(id);
+                        break;
+
+                    case 2:
+                        Console.WriteLine("How much amount you want to deposit: ");
+                        int amount = int.Parse(Console.ReadLine());
+                        Console.WriteLine("What is the Account type");
+                        string account_type = Console.ReadLine();
+                        Console.WriteLine("Enter the Account Number to which you want to deposit the ammount:");
+                        int account_number = int.Parse(Console.ReadLine());
+                        Details.deposit(amount, account_number, account_type);
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Enter the ammount you want to withdraw: ");
+                        int withdraw_amt = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter the Account type: ");
+                        string type_account = Console.ReadLine();
+                        Console.WriteLine("Enter the account number: ");
+                        int acc_number = int.Parse(Console.ReadLine());
+                        Details.withdraw(withdraw_amt, type_account, acc_number);
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Enter the account number whose interest you want to calculate: ");
+                        int no_acc = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter the account type whose interest you want to calculate: ");
+                        account_type = Console.ReadLine();
+
+
+                        Details.interest(no_acc, account_type);
+
+                        break;
+
+                }
+
+                Console.WriteLine("Do you want to continue: 1: Yes 2: No");
+                decide = int.Parse(Console.ReadLine());
+            }
+
+
+
+
+
+            Console.ReadKey();
+
+        }
+
+     
+
+
+    }
+}
